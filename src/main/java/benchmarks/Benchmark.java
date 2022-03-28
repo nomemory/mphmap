@@ -15,7 +15,7 @@ public class Benchmark {
     public static void main(String[] args) throws IOException, RunnerException {
         Options options = new OptionsBuilder()
                 // Benchmarks to include
-                .include(HashFunctionBenchmark.class.getName())
+                .include(TestReads.class.getName())
                 // Configuration
                 .timeUnit(TimeUnit.MICROSECONDS)
                 .shouldDoGC(true)

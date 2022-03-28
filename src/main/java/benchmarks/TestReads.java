@@ -12,8 +12,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-
-import static net.andreinc.mockneat.unit.text.Strings.strings;
 import static net.andreinc.mockneat.unit.text.Words.words;
 import static net.andreinc.mockneat.unit.types.Ints.ints;
 
@@ -44,6 +42,6 @@ public class TestReads {
 
     @Benchmark
     public void testGetInReadOnlyMap(Blackhole bh) {
-        bh.consume(map.get(From.from(keys).get()));
+        bh.consume(readOnlyMap.get(From.from(keys).get()));
     }
 }

@@ -23,7 +23,6 @@ public class ReadOnlyMap<K,V> {
         result.mapper = mapper;
         map.forEach((k, v) -> {
             int hash = result.phf.hash(mapper.apply(k));
-            if (hash<=0) hash = -hash;
             result.values.set(hash, v);
         });
         return result;
