@@ -114,14 +114,14 @@ public class PHF {
                 occupiedIdx++;
             }
             occupied.set(occupiedIdx);
-            this.seeds[originalIndex] = -(occupiedIdx);
+            this.seeds[originalIndex] = -(occupiedIdx)-1;
         }
     }
 
     public int hash(byte[] obj) {
         int seed = internalHash(obj, INIT_SEED) % seeds.length;
-        if (seeds[seed]<=0) {
-            return -seeds[seed];
+        if (seeds[seed]<0) {
+            return -seeds[seed]-1;
         }
         int finalHash = internalHash(obj, seeds[seed]) % this.numBuckets;
         return finalHash;

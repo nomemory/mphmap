@@ -16,7 +16,7 @@ public class ReadOnlyMapFuzTest {
         final Map<String, String> map = new HashMap<>();
         names()
                 .full().map(n -> ints().get() + " " + n)
-                .set(10_000)
+                .set(1_000_000)
                 .get()
                 .forEach(s -> map.put(s, strings().size(1024).get()));
         final ReadOnlyMap<String, String> rom = ReadOnlyMap.snapshot(map);
